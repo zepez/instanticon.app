@@ -2,7 +2,8 @@
   <h1>
     <br/>
     <br/>
-    ⏱️
+    🪄
+    <br />
     <br />
     instanticon.app
     <br />
