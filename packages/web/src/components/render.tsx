@@ -26,7 +26,7 @@ export default function Render(props: IconState) {
           justifyContent: "center",
           width: "100%",
           height: "100%",
-          backgroundColor: "#000",
+          background: props.bgColor,
           borderRadius: `${props.bgRadius}%`,
         }}
       >
@@ -34,10 +34,11 @@ export default function Render(props: IconState) {
           style={{
             width: props.iconSize,
             height: props.iconSize,
-            stroke: "#fff",
+            stroke: props.iconBorderColor,
+            fill: props.iconFillColor,
             strokeWidth: props.iconBorder,
-            color: "#fff",
-            transform: `rotate(${props.iconRotate}deg)`,
+            color: props.iconBorderColor,
+            transform: `rotate(${props.iconRotate}deg) translate(${props.iconOffsetX}px, ${props.iconOffsetY}px)`,
           }}
         />
       </div>

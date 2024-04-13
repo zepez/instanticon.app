@@ -14,17 +14,8 @@ export const SVG = ({ href }: { href: string }) => {
 export const Logo = () => {
   const state = useStore();
 
-  const preset = () => {
-    state.setIcon("LuWand2");
-    state.setIconName("Wand2");
-    state.setIconRotate(0);
-    state.setIconSize(400);
-    state.setBgPadding(50);
-    state.setBgRadius(10);
-  };
-
   return (
-    <Button variant="ghost" size="auto" onClick={preset}>
+    <Button variant="ghost" size="auto" onClick={() => state.reset()}>
       <SVG href="logo.svg" />
     </Button>
   );
@@ -34,6 +25,7 @@ export default function Presets() {
   const state = useStore();
 
   const two = () => {
+    state.reset();
     state.setIcon("LuCross");
     state.setIconName("Cross");
     state.setIconRotate(45);

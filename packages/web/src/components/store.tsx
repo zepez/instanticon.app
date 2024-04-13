@@ -1,6 +1,7 @@
 import { create } from "zustand";
 
 export interface IconState {
+  reset: (key?: keyof typeof initial) => void;
   icon: string;
   setIcon: (icon: string) => void;
   iconName: string;
@@ -11,29 +12,60 @@ export interface IconState {
   setIconBorder: (size: number) => void;
   iconRotate: number;
   setIconRotate: (size: number) => void;
+  iconOffsetX: number;
+  setIconOffsetX: (size: number) => void;
+  iconOffsetY: number;
+  setIconOffsetY: (size: number) => void;
+  iconBorderColor: string;
+  setIconBorderColor: (color: string) => void;
+  iconFillColor: string;
+  setIconFillColor: (color: string) => void;
   bgSize: number;
   bgPadding: number;
   setBgPadding: (padding: number) => void;
   bgRadius: number;
   setBgRadius: (radius: number) => void;
+  bgColor: string;
+  setBgColor: (color: string) => void;
 }
 
-const useStore = create<IconState>()((set) => ({
-  icon: "LuWand",
-  setIcon: (icon: string) => set({ icon }),
-  iconName: "Wand",
-  setIconName: (iconName: string) => set({ iconName }),
-  iconSize: 250,
-  setIconSize: (iconSize: number) => set({ iconSize }),
+const initial = {
+  icon: "LuWand2",
+  iconName: "Wand2",
+  iconSize: 400,
   iconBorder: 2,
-  setIconBorder: (iconBorder: number) => set({ iconBorder }),
   iconRotate: 0,
-  setIconRotate: (iconRotate: number) => set({ iconRotate }),
+  iconOffsetX: 0,
+  iconOffsetY: 0,
+  iconBorderColor: "rgb(255, 255, 255)",
+  iconFillColor: "rgb(0, 0, 0, 0)",
   bgSize: 600,
   bgPadding: 50,
-  setBgPadding: (bgPadding: number) => set({ bgPadding }),
   bgRadius: 10,
+  bgColor: "rgb(0, 0, 0)",
+};
+
+const useStore = create<IconState>()((set) => ({
+  ...initial,
+  reset: (key?: keyof typeof initial) => {
+    if (key) {
+      set({ [key]: initial[key] });
+    } else {
+      set(initial);
+    }
+  },
+  setIcon: (icon: string) => set({ icon }),
+  setIconName: (iconName: string) => set({ iconName }),
+  setIconSize: (iconSize: number) => set({ iconSize }),
+  setIconBorder: (iconBorder: number) => set({ iconBorder }),
+  setIconRotate: (iconRotate: number) => set({ iconRotate }),
+  setIconOffsetX: (iconOffsetX: number) => set({ iconOffsetX }),
+  setIconOffsetY: (iconOffsetY: number) => set({ iconOffsetY }),
+  setIconBorderColor: (iconBorderColor: string) => set({ iconBorderColor }),
+  setIconFillColor: (iconFillColor: string) => set({ iconFillColor }),
+  setBgPadding: (bgPadding: number) => set({ bgPadding }),
   setBgRadius: (bgRadius: number) => set({ bgRadius }),
+  setBgColor: (bgColor: string) => set({ bgColor }),
 }));
 
 export default useStore;
