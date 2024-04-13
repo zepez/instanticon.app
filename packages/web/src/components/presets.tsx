@@ -1,13 +1,32 @@
 import { Button } from "@/components/ui/button";
 import useStore from "@/components/store";
 
-const Load = ({ href }: { href: string }) => {
+export const SVG = ({ href }: { href: string }) => {
   const size = "50";
 
   return (
     <svg width={size} height={size}>
       <image xlinkHref={href} width={size} height={size} />
     </svg>
+  );
+};
+
+export const Logo = () => {
+  const state = useStore();
+
+  const preset = () => {
+    state.setIcon("LuWand2");
+    state.setIconName("Wand2");
+    state.setIconRotate(0);
+    state.setIconSize(400);
+    state.setBgPadding(50);
+    state.setBgRadius(10);
+  };
+
+  return (
+    <Button variant="ghost" size="auto" onClick={preset}>
+      <SVG href="logo.svg" />
+    </Button>
   );
 };
 
@@ -29,13 +48,13 @@ export default function Presets() {
         Presets <span>•</span>
       </h2>
       <Button variant="ghost" size="auto" onClick={two}>
-        <Load href="/presets/preset-2.svg" />
+        <SVG href="/presets/preset-2.svg" />
       </Button>
       <Button variant="ghost" size="auto" onClick={two}>
-        <Load href="/presets/preset-2.svg" />
+        <SVG href="/presets/preset-2.svg" />
       </Button>
       <Button variant="ghost" size="auto" onClick={two}>
-        <Load href="/presets/preset-2.svg" />
+        <SVG href="/presets/preset-2.svg" />
       </Button>
     </nav>
   );

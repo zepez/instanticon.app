@@ -8,7 +8,7 @@ import {
 import Control from "@/components/control";
 import Render from "@/components/render";
 import Download from "@/components/download";
-import Presets from "@/components/presets";
+import Presets, { Logo } from "@/components/presets";
 import useStore from "@/components/store";
 
 export default function Page() {
@@ -17,8 +17,11 @@ export default function Page() {
   return (
     <main className="font-sans">
       <div className="dashed-grid-paper h-dvh overflow-y-hidden">
-        <div className="bg-background flex items-center justify-between border-b p-4">
-          <h1 className="font-display text-xl font-bold">Instant Icon</h1>
+        <div className="bg-background flex items-center justify-between border-b px-4 py-2">
+          <span className="flex items-center justify-center gap-2">
+            <Logo />
+            <h1 className="font-display text-2xl font-bold">Instant Icon</h1>
+          </span>
           <Presets />
           <Download />
         </div>
