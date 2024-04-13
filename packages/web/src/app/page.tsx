@@ -16,7 +16,7 @@ export default function Page() {
 
   return (
     <main className="font-sans">
-      <div className="dashed-grid-paper h-dvh overflow-hidden">
+      <div className="dashed-grid-paper h-dvh lg:overflow-hidden">
         <div className="bg-background flex items-center justify-between border-b px-4 py-2">
           <span className="flex items-center justify-center gap-2">
             <Preset
@@ -26,7 +26,7 @@ export default function Page() {
             />
             <div className="flex flex-col gap-0">
               <h1 className="font-display text-xl font-bold">Instant Icon</h1>
-              <h2 className="text-balance text-xs leading-3">
+              <h2 className="hidden text-balance text-xs leading-3 sm:block">
                 Quickly and easily create an icon for your next project
               </h2>
             </div>
@@ -34,8 +34,8 @@ export default function Page() {
           <Presets />
           <Download />
         </div>
-        <div className="flex h-full">
-          <div className="bg-background h-[100vh] w-[400px] overflow-y-scroll border-r p-4">
+        <div className="flex flex-col gap-8 lg:flex-row lg:gap-0">
+          <div className="bg-background h-[50vh] w-full overflow-y-scroll border-b p-4 lg:h-[100vh] lg:w-[400px] lg:border-r">
             <Control />
           </div>
           <div className="flex w-full items-center justify-center">

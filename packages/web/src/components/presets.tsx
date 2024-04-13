@@ -78,7 +78,7 @@ export default function Presets() {
   };
 
   return (
-    <nav className="flex items-center justify-center gap-1">
+    <nav className="hidden items-center justify-center gap-1 lg:flex">
       <h2 className="flex items-center justify-center gap-4 pr-3">
         Presets <span>•</span>
       </h2>

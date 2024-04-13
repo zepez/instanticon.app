@@ -95,6 +95,7 @@ export default function ControlForeground() {
         height={80}
         hideControls
         hidePresets
+        className="mx-auto block"
       />
 
       <Label
@@ -109,6 +110,7 @@ export default function ControlForeground() {
         height={80}
         hideControls
         hidePresets
+        className="mx-auto block"
       />
     </div>
   );

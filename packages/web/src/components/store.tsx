@@ -20,7 +20,6 @@ export interface IconState {
   setIconBorderColor: (color: string) => void;
   iconFillColor: string;
   setIconFillColor: (color: string) => void;
-  bgSize: number;
   bgPadding: number;
   setBgPadding: (padding: number) => void;
   bgRadius: number;
@@ -39,7 +38,6 @@ const initial = {
   iconOffsetY: 0,
   iconBorderColor: "rgb(255, 255, 255)",
   iconFillColor: "rgb(0, 0, 0, 0)",
-  bgSize: 600,
   bgPadding: 50,
   bgRadius: 10,
   bgColor: "rgb(0, 0, 0)",

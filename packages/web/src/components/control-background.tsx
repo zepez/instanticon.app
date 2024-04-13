@@ -37,6 +37,7 @@ export default function ControlBackground() {
         width={280}
         height={140}
         hideOpacity
+        className="mx-auto block"
       />
     </div>
   );

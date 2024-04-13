@@ -9,13 +9,12 @@ export default function Render(props: IconState) {
   return (
     <div
       id="render"
+      className="h-[300px] w-[300px] md:h-[500px] md:w-[500px] lg:h-[600px] lg:w-[600px]"
       style={{
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         overflow: "hidden",
-        width: props.bgSize,
-        height: props.bgSize,
         padding: props.bgPadding,
       }}
     >
