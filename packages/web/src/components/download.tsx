@@ -1,5 +1,6 @@
 "use client";
 
+import { usePlausible } from "next-plausible";
 import { toPng, toSvg } from "html-to-image";
 import {
   DropdownMenu,
@@ -10,6 +11,8 @@ import {
 import { Button } from "@/components/ui/button";
 
 export default function Download() {
+  const plausible = usePlausible();
+
   const download = async (type: "svg" | "png") => {
     const render = document.getElementById("render");
     if (!render) return;
@@ -18,10 +21,12 @@ export default function Download() {
 
     if (type === "svg") {
       uri = await toSvg(render);
+      plausible("download-svg");
     }
 
     if (type === "png") {
       uri = await toPng(render);
+      plausible("download-png");
     }
 
     const downloadLink = document.createElement("a");

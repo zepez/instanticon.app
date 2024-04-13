@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
-
+import PlausibleProvider from "next-plausible";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +20,9 @@ export default function Layout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <TooltipProvider delayDuration={0}>{children}</TooltipProvider>
+        <PlausibleProvider domain="instanticon.app">
+          <TooltipProvider delayDuration={0}>{children}</TooltipProvider>
+        </PlausibleProvider>
       </body>
     </html>
   );
