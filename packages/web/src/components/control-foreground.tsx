@@ -2,11 +2,6 @@
 
 import ColorPicker from "react-best-gradient-color-picker";
 import { Slider } from "@/components/ui/slider";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
 import Label from "@/components/label";
 import ControlIcon from "@/components/control-icon";
 import useStore from "@/components/store";
@@ -17,14 +12,7 @@ export default function ControlForeground() {
   return (
     <div>
       <Label name="Icon" value={state.iconName} />
-      <Tooltip>
-        <TooltipTrigger className="w-full" tabIndex={-1}>
-          <ControlIcon />
-        </TooltipTrigger>
-        <TooltipContent>
-          <p>Select a different icon</p>
-        </TooltipContent>
-      </Tooltip>
+      <ControlIcon />
 
       <Label
         name="Size"

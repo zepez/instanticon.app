@@ -35,7 +35,7 @@ export default function ControlBackground() {
         value={state.bgColor}
         onChange={state.setBgColor}
         width={280}
-        height={80}
+        height={140}
         hideOpacity
       />
     </div>

@@ -8,6 +8,11 @@ import {
   DialogDescription,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import useStore from "@/components/store";
@@ -33,13 +38,21 @@ export default function ControlIcon() {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger className="bg-muted flex w-full items-center justify-center rounded-md py-4">
-        <CurrentIcon
-          key={state.icon}
-          size={48}
-          className="text-foreground/70"
-        />
-      </DialogTrigger>
+      <Tooltip>
+        <TooltipTrigger asChild className="w-full">
+          <DialogTrigger className="bg-muted flex w-full items-center justify-center rounded-md py-4">
+            <CurrentIcon
+              key={state.icon}
+              size={48}
+              className="text-foreground/70"
+            />
+          </DialogTrigger>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>Select a different icon</p>
+        </TooltipContent>
+      </Tooltip>
+
       <DialogContent className="h-[80vh]">
         <DialogHeader>
           <DialogTitle>Pick an icon</DialogTitle>
