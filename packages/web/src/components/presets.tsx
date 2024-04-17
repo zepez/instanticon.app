@@ -6,14 +6,10 @@ import {
 import { Button } from "@/components/ui/button";
 import useStore from "@/components/store";
 
-const SVG = ({ href }: { href: string }) => {
+const PNG = ({ href }: { href: string }) => {
   const size = "50";
 
-  return (
-    <svg width={size} height={size}>
-      <image xlinkHref={href} width={size} height={size} />
-    </svg>
-  );
+  return <img src={href} width={size} height={size} />;
 };
 
 export const Preset = ({
@@ -29,7 +25,7 @@ export const Preset = ({
     <Tooltip>
       <TooltipTrigger asChild tabIndex={-1}>
         <Button variant="ghost" size="auto" onClick={onClick}>
-          <SVG href={href} />
+          <PNG href={href} />
         </Button>
       </TooltipTrigger>
       <TooltipContent>
@@ -84,15 +80,15 @@ export default function Presets() {
       </h2>
       <Preset
         onClick={two}
-        href="/presets/preset-2.svg"
+        href="/presets/preset-2.png"
         tooltip="Professional"
       />
       <Preset
         onClick={three}
-        href="/presets/preset-3.svg"
+        href="/presets/preset-3.png"
         tooltip="Versatile"
       />
-      <Preset onClick={four} href="/presets/preset-4.svg" tooltip="Trendy" />
+      <Preset onClick={four} href="/presets/preset-4.png" tooltip="Trendy" />
     </nav>
   );
 }

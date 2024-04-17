@@ -21,7 +21,7 @@ export default function Page() {
           <span className="flex items-center justify-center gap-2">
             <Preset
               onClick={() => state.reset()}
-              href="logo.svg"
+              href="logo.png"
               tooltip="Use our logo!"
             />
             <div className="flex flex-col gap-0">
