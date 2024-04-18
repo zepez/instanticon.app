@@ -6,7 +6,7 @@ import ControlForeground from "@/components/control-foreground";
 
 export default function Control() {
   return (
-    <Tabs defaultValue="background" className="w-full">
+    <Tabs defaultValue="background" className="w-full flex-grow">
       <TabsList className="w-full">
         <TabsTrigger value="background" className="w-full">
           Background

@@ -6,26 +6,28 @@ import {
 import { Button } from "@/components/ui/button";
 import useStore from "@/components/store";
 
-const PNG = ({ href }: { href: string }) => {
+const PNG = ({ href, alt }: { href: string; alt: string }) => {
   const size = "50";
 
-  return <img src={href} width={size} height={size} />;
+  return <img src={href} alt={alt} width={size} height={size} />;
 };
 
 export const Preset = ({
   onClick,
   href,
   tooltip,
+  alt,
 }: {
   onClick: () => void;
   href: string;
   tooltip: string;
+  alt: string;
 }) => {
   return (
     <Tooltip>
       <TooltipTrigger asChild tabIndex={-1}>
         <Button variant="ghost" size="auto" onClick={onClick}>
-          <PNG href={href} />
+          <PNG href={href} alt={alt} />
         </Button>
       </TooltipTrigger>
       <TooltipContent>
@@ -82,13 +84,20 @@ export default function Presets() {
         onClick={two}
         href="/presets/preset-2.png"
         tooltip="Professional"
+        alt="Professional icon preset"
       />
       <Preset
         onClick={three}
         href="/presets/preset-3.png"
         tooltip="Versatile"
+        alt="Versatile icon preset"
       />
-      <Preset onClick={four} href="/presets/preset-4.png" tooltip="Trendy" />
+      <Preset
+        onClick={four}
+        href="/presets/preset-4.png"
+        tooltip="Trendy"
+        alt="Trendy icon preset"
+      />
     </nav>
   );
 }
